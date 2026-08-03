@@ -3,127 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3-Day Email Sequence — [Client Name]</title>
-<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<title>Post-Consultation Email Sequence — Free Form Fitness</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-
 :root{
-  --red:#C41E1E;
-  --ink:#2E2C28;
-  --mid:#706D66;
-  --light:#E8E5DF;
-  --lighter:#F2EFE9;
-  --off-white:#F8F6F1;
-  --white:#FFFFFF;
-  /* Gmail colors */
-  --gmail-bg:#F6F8FC;
-  --gmail-chrome:#FFFFFF;
-  --gmail-border:#E0E0E0;
-  --gmail-blue:#1A73E8;
-  --gmail-text:#202124;
-  --gmail-meta:#5F6368;
-  --gmail-hover:#F1F3F4;
-  --gmail-subject:#202124;
+  --brand:#1F9D57; --brand-dark:#15733F;
+  --gmail-bg:#F6F8FC; --gmail-chrome:#FFFFFF; --gmail-border:#E0E0E0;
+  --gmail-blue:#1A73E8; --gmail-text:#202124; --gmail-meta:#5F6368; --gmail-hover:#F1F3F4; --white:#FFFFFF;
 }
-
 body{font-family:'Roboto',sans-serif;background:var(--gmail-bg);color:var(--gmail-text);font-size:14px;line-height:1.6;padding:32px 20px;}
-
-/* PAGE HEADER */
 .page-header{text-align:center;margin-bottom:40px;}
 .page-header h1{font-family:'Outfit',sans-serif;font-size:28px;font-weight:600;color:#202124;margin-bottom:6px;}
 .page-header p{font-size:14px;color:var(--gmail-meta);}
-
-/* SEQUENCE */
 .sequence{display:flex;flex-direction:column;gap:32px;max-width:780px;margin:0 auto;}
-
-/* EMAIL CARD */
 .email-card{background:var(--gmail-chrome);border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.08);}
-
-/* GMAIL CHROME */
-.gmail-chrome{background:var(--gmail-chrome);border-bottom:1px solid var(--gmail-border);padding:0;}
-
-/* Gmail top bar */
-.gmail-topbar{background:#FFFFFF;display:flex;align-items:center;padding:8px 16px;gap:12px;border-bottom:1px solid var(--gmail-border);}
-.gmail-logo{display:flex;align-items:center;gap:4px;}
-.gmail-logo-m{width:32px;height:24px;}
+.gmail-chrome{background:var(--gmail-chrome);border-bottom:1px solid var(--gmail-border);}
+.gmail-topbar{background:#FFFFFF;display:flex;align-items:center;padding:8px 16px;gap:10px;border-bottom:1px solid var(--gmail-border);}
+.gmail-logo-m{width:30px;height:23px;}
 .gmail-topbar-actions{display:flex;align-items:center;gap:16px;margin-left:auto;}
 .gmail-icon{width:20px;height:20px;border-radius:50%;background:var(--gmail-hover);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--gmail-meta);}
-
-/* Day badge */
-.day-badge{display:inline-flex;align-items:center;background:#E8F0FE;color:var(--gmail-blue);font-size:11px;font-weight:500;letter-spacing:.02em;padding:3px 10px;border-radius:12px;margin:10px 16px 0;}
-
-/* Email thread header */
+.day-badge{display:inline-flex;align-items:center;background:#E7F6EE;color:var(--brand-dark);font-size:11px;font-weight:500;letter-spacing:.02em;padding:3px 11px;border-radius:12px;margin:10px 16px 0;}
 .email-thread-header{padding:12px 16px 10px;}
-.email-subject-line{font-family:'Roboto',sans-serif;font-size:20px;font-weight:400;color:var(--gmail-subject);margin-bottom:0;}
-
-/* Sender row */
+.email-subject-line{font-size:20px;font-weight:400;color:var(--gmail-text);}
 .sender-row{display:flex;align-items:center;padding:10px 16px;gap:12px;border-bottom:1px solid var(--gmail-border);}
-.sender-avatar{width:36px;height:36px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;color:#fff;flex-shrink:0;font-family:'Roboto',sans-serif;}
-.sender-info{flex:1;}
+.sender-avatar{width:36px;height:36px;border-radius:50%;background:var(--brand);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:#fff;flex-shrink:0;}
+.sender-info{flex:1;min-width:0;}
 .sender-name{font-size:14px;font-weight:500;color:var(--gmail-text);}
 .sender-email{font-size:12px;color:var(--gmail-meta);}
 .sender-meta{font-size:12px;color:var(--gmail-meta);white-space:nowrap;}
 .sender-actions{display:flex;gap:8px;}
 .sender-action-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--gmail-meta);font-size:14px;}
 .sender-action-icon:hover{background:var(--gmail-hover);}
-
-/* Email body */
-.email-body{padding:20px 24px 28px 68px;}
-.email-p{font-size:14px;color:#3C4043;margin-bottom:12px;font-weight:400;line-height:1.75;}
-.email-p:last-of-type{margin-bottom:0;}
-.email-p strong{font-weight:500;color:var(--gmail-text);}
-.email-p em{font-style:italic;color:var(--gmail-meta);}
-.email-p.bold-line{font-weight:500;color:var(--gmail-text);}
-
-/* Callout items */
-.no-need-list{display:flex;flex-direction:column;gap:6px;margin:12px 0;}
-.no-need-item{font-size:14px;color:#5F6368;font-style:italic;padding:8px 14px;background:#F8F9FA;border-left:3px solid var(--gmail-border);border-radius:0 4px 4px 0;}
-
-.life-events{display:flex;flex-direction:column;gap:6px;margin:12px 0;}
-.life-event{font-size:14px;color:#5F6368;font-style:italic;padding:8px 14px;background:#F8F9FA;border-left:3px solid var(--gmail-border);border-radius:0 4px 4px 0;}
-
-/* CTA */
-.email-cta{display:inline-block;background:var(--gmail-blue);color:#fff;text-decoration:none;padding:10px 24px;border-radius:4px;font-size:14px;font-weight:500;margin:16px 0;letter-spacing:.01em;font-family:'Roboto',sans-serif;}
-.email-cta:hover{background:#1557B0;}
-
-/* Divider */
+.email-body{padding:20px 24px 28px 68px;font-family:Arial,Helvetica,sans-serif;}
+.email-p{font-size:13pt;color:#3C4043;margin-bottom:12px;font-weight:400;line-height:1.7;}
+.email-p.bold-line{font-weight:700;color:var(--gmail-text);}
+.email-p.italic-line{font-style:italic;}
+.email-p strong{font-weight:700;color:var(--gmail-text);}
+.email-p em{font-style:italic;}
+.callout-list{display:flex;flex-direction:column;gap:6px;margin:12px 0;}
+.callout-item{font-size:13pt;color:#3C4043;font-style:italic;padding:9px 14px;background:#EEF8F2;border-left:3px solid var(--brand);border-radius:0 4px 4px 0;}
+.email-cta{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:11px 26px;border-radius:4px;font-size:13pt;font-weight:500;margin:14px 0 4px;letter-spacing:.01em;}
+.email-cta:hover{background:var(--brand-dark);}
 .email-divider{border:none;border-top:1px solid var(--gmail-border);margin:20px 0;}
-
-/* Signature */
 .email-sig{margin-top:16px;}
-.sig-closing{font-size:14px;color:#3C4043;font-style:italic;margin-bottom:6px;}
-.sig-name{font-size:14px;font-weight:500;color:var(--gmail-text);}
-.sig-title{font-size:13px;color:var(--gmail-meta);}
-
-/* Reply bar */
+.sig-closing{font-size:13pt;color:#3C4043;font-style:italic;margin-bottom:6px;}
+.sig-name{font-size:13pt;font-weight:700;color:var(--gmail-text);}
+.sig-title{font-size:12pt;color:var(--gmail-meta);}
+.email-ps{margin-top:18px;padding-top:14px;border-top:1px solid var(--gmail-border);font-size:13pt;color:#3C4043;line-height:1.7;}
 .reply-bar{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--gmail-border);background:#FAFAFA;}
-.reply-btn{display:flex;align-items:center;gap:6px;padding:7px 16px;border:1px solid var(--gmail-border);border-radius:4px;font-size:13px;font-weight:500;color:var(--gmail-meta);background:var(--white);cursor:pointer;font-family:'Roboto',sans-serif;}
+.reply-btn{display:flex;align-items:center;gap:6px;padding:7px 16px;border:1px solid var(--gmail-border);border-radius:4px;font-size:13px;font-weight:500;color:var(--gmail-meta);background:var(--white);cursor:pointer;}
 .reply-btn:hover{background:var(--gmail-hover);}
-
-/* Subject options */
 .subject-options{background:#F8F9FA;border-top:1px solid var(--gmail-border);padding:16px 24px;}
 .subject-options-label{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gmail-meta);margin-bottom:10px;}
 .subject-list{display:flex;flex-direction:column;gap:6px;}
 .subject-option{font-size:13px;color:var(--gmail-text);padding:8px 12px;background:var(--white);border:1px solid var(--gmail-border);border-radius:4px;display:flex;align-items:center;gap:10px;}
-.subject-option.recommended{border-color:var(--gmail-blue);background:#E8F0FE;}
+.subject-option.recommended{border-color:var(--brand);background:#EEF8F2;}
 .subject-option::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gmail-border);flex-shrink:0;}
-.subject-option.recommended::before{background:var(--gmail-blue);}
-.recommended-tag{font-size:11px;font-weight:500;color:var(--gmail-blue);margin-left:auto;letter-spacing:.02em;}
-
-@media(max-width:600px){
-  .email-body{padding:16px 16px 20px 16px;}
-  .sender-row{padding:10px 12px;}
-  .day-badge{margin:8px 12px 0;}
-}
+.subject-option.recommended::before{background:var(--brand);}
+.recommended-tag{font-size:11px;font-weight:500;color:var(--brand-dark);margin-left:auto;letter-spacing:.02em;}
+.merge{background:#FFF176;padding:0 3px;border-radius:2px;}
+@media(max-width:600px){.email-body{padding:16px;}.sender-row{padding:10px 12px;}.day-badge{margin:8px 12px 0;}}
 </style>
 </head>
 <body>
 
 <div class="page-header">
-  <h1>3-Day Email Sequence</h1>
-  <p>For consultation no-buy audience &nbsp;·&nbsp; [Client Name]</p>
+  <h1>Post-Consultation Email Sequence</h1>
+  <p>3-Email Nurture &nbsp;·&nbsp; Free Form Fitness</p>
 </div>
 
 <div class="sequence">
@@ -131,84 +79,62 @@ body{font-family:'Roboto',sans-serif;background:var(--gmail-bg);color:var(--gmai
   <!-- EMAIL 1 -->
   <div class="email-card">
     <div class="gmail-chrome">
-
-      <!-- Gmail top bar -->
       <div class="gmail-topbar">
         <svg class="gmail-logo-m" viewBox="0 0 32 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 4.5C0 3.12 1.12 2 2.5 2h27C30.88 2 32 3.12 32 4.5v15c0 1.38-1.12 2.5-2.5 2.5h-27C1.12 22 0 20.88 0 19.5V4.5z" fill="#fff" stroke="#E0E0E0" stroke-width="1"/>
           <path d="M0 4.5L16 13.5 32 4.5" fill="none" stroke="#EA4335" stroke-width="2"/>
           <path d="M0 4.5V19.5L10 12" fill="none" stroke="#4285F4" stroke-width="1.5"/>
           <path d="M32 4.5V19.5L22 12" fill="none" stroke="#34A853" stroke-width="1.5"/>
-          <path d="M10 12L0 19.5" fill="none" stroke="#FBBC05" stroke-width="1.5"/>
-          <path d="M22 12L32 19.5" fill="none" stroke="#EA4335" stroke-width="1.5"/>
         </svg>
-        <span style="font-size:13px;color:#5F6368;font-weight:400;">Gmail</span>
-        <div class="gmail-topbar-actions">
-          <div class="gmail-icon">⋯</div>
-        </div>
+        <span style="font-size:13px;color:#5F6368;">Gmail</span>
+        <div class="gmail-topbar-actions"><div class="gmail-icon">⋯</div></div>
       </div>
-
-      <div class="day-badge">Day 1</div>
-      <div class="email-thread-header">
-        <div class="email-subject-line">All You Have to Do Is Show Up</div>
-      </div>
-
+      <div class="day-badge">Send After Health Consultation &nbsp;·&nbsp; Put the Plan Into Action</div>
+      <div class="email-thread-header"><div class="email-subject-line">All You Have to Do Is Show Up</div></div>
       <div class="sender-row">
-        <div class="sender-avatar">F</div>
+        <div class="sender-avatar">FF</div>
         <div class="sender-info">
-          <div class="sender-name">[Founder Name] <span style="font-weight:400;color:#5F6368;">&lt;founder@[clientname].com&gt;</span></div>
-          <div class="sender-email">to [Name]</div>
+          <div class="sender-name"><span class="merge">[Founder Name]</span> <span style="font-weight:400;color:#5F6368;">&lt;founder@freeformfitness.com&gt;</span></div>
+          <div class="sender-email">to <span class="merge">[Name]</span></div>
         </div>
-        <div class="sender-meta">9:42 AM</div>
-        <div class="sender-actions">
-          <div class="sender-action-icon">↩</div>
-          <div class="sender-action-icon">⋯</div>
-        </div>
+        <div class="sender-meta">9:15 AM</div>
+        <div class="sender-actions"><div class="sender-action-icon">↩</div><div class="sender-action-icon">⋯</div></div>
       </div>
     </div>
-
     <div class="email-body">
-      <p class="email-p">Hey [Name],</p>
-      <p class="email-p">This is [Founder Name], founder of [Client Name].</p>
-      <p class="email-p">I heard you've been taking steps to live healthier. You met with one of our coaches and walked away with a health plan built around your schedule.</p>
+      <p class="email-p">Hey <span class="merge">[Name]</span>,</p>
+      <p class="email-p">This is <span class="merge">[Founder Name]</span>, founder of Free Form Fitness.</p>
+      <p class="email-p">You've walked away with a health plan built around your schedule.</p>
       <p class="email-p bold-line">That's the first hurdle done.</p>
-      <p class="email-p">But having a plan and implementing are two different things. That's where our coaches come in.</p>
-
-      <div class="no-need-list">
-        <div class="no-need-item">No need to think about your next workout session.</div>
-        <div class="no-need-item">No need to worry about your form.</div>
-        <div class="no-need-item">No need to adjust your plan when life gets busy.</div>
+      <p class="email-p">But having a plan and implementing it are two different things.</p>
+      <p class="email-p">We've met a lot of busy professionals who stay consistent for half a month…</p>
+      <p class="email-p">Then return to their old schedule when career or life gets in the way.</p>
+      <p class="email-p">They're all high-performers that's consistent but forgets to put themselves first.</p>
+      <p class="email-p">So our coaches do it for them.</p>
+      <p class="email-p">And if you bring your health plan to us…</p>
+      <div class="callout-list">
+        <div class="callout-item">You don't have to plan your next workout session.</div>
+        <div class="callout-item">You don't have to worry about injuries due to wrong form.</div>
+        <div class="callout-item">You don't have to adjust your health plan alone when life gets busy.</div>
       </div>
-
-      <p class="email-p">We have you covered.</p>
-      <p class="email-p">All you have to do is show up 3 times a week for 30 minutes.</p>
-      <p class="email-p bold-line">Your trainer does the heavy lifting.</p>
-      <p class="email-p">Setting up your programs, adjusting to your body's needs, and guidance on eating right to fuel your workouts.</p>
-      <p class="email-p bold-line">You just show up and your body gets what it needs.</p>
-      <p class="email-p">If you'd like to put that plan into action, we have an offer to get you started…</p>
-
+      <p class="email-p bold-line">We got you covered.</p>
+      <p class="email-p">If you want someone to do the heavy lifting for your health…</p>
       <a href="#" class="email-cta">Click Here to Meet Your Personal Trainer</a>
-
       <hr class="email-divider">
       <div class="email-sig">
-        <p class="sig-closing">To the routine that doesn't break down,</p>
-        <p class="sig-name">[Founder Name]</p>
-        <p class="sig-title">Founder of [Client Name]</p>
+        <p class="sig-closing">To living healthy,</p>
+        <p class="sig-name"><span class="merge">[Founder Name]</span></p>
+        <p class="sig-title">Founder of Free Form Fitness</p>
       </div>
+      <div class="email-ps">P.S. If you're someone really busy, showing up 3x a week for 30-minute sessions is all you need to get results.</div>
     </div>
-
-    <div class="reply-bar">
-      <button class="reply-btn">↩ Reply</button>
-      <button class="reply-btn">↪ Forward</button>
-    </div>
-
+    <div class="reply-bar"><button class="reply-btn">↩ Reply</button><button class="reply-btn">↪ Forward</button></div>
     <div class="subject-options">
       <div class="subject-options-label">Subject Line Variations</div>
       <div class="subject-list">
-        <div class="subject-option recommended">All You Have to Do Is Show Up <span class="recommended-tag">RECOMMENDED</span></div>
-        <div class="subject-option">Your Health Plan Is Ready. Here's the Next Step.</div>
-        <div class="subject-option">Your Health Plan Needs One More Thing</div>
-        <div class="subject-option">Let's Put Your Health Plan Into Action</div>
+        <div class="subject-option recommended">All you have to do is show up <span class="recommended-tag">RECOMMENDED</span></div>
+        <div class="subject-option">Your health plan is ready</div>
+        <div class="subject-option"><span class="merge">[Name]</span>, let's put your health plan into action</div>
       </div>
     </div>
   </div>
@@ -222,78 +148,58 @@ body{font-family:'Roboto',sans-serif;background:var(--gmail-bg);color:var(--gmai
           <path d="M0 4.5L16 13.5 32 4.5" fill="none" stroke="#EA4335" stroke-width="2"/>
           <path d="M0 4.5V19.5L10 12" fill="none" stroke="#4285F4" stroke-width="1.5"/>
           <path d="M32 4.5V19.5L22 12" fill="none" stroke="#34A853" stroke-width="1.5"/>
-          <path d="M10 12L0 19.5" fill="none" stroke="#FBBC05" stroke-width="1.5"/>
-          <path d="M22 12L32 19.5" fill="none" stroke="#EA4335" stroke-width="1.5"/>
         </svg>
-        <span style="font-size:13px;color:#5F6368;font-weight:400;">Gmail</span>
-        <div class="gmail-topbar-actions">
-          <div class="gmail-icon">⋯</div>
-        </div>
+        <span style="font-size:13px;color:#5F6368;">Gmail</span>
+        <div class="gmail-topbar-actions"><div class="gmail-icon">⋯</div></div>
       </div>
-
-      <div class="day-badge">Day 2</div>
-      <div class="email-thread-header">
-        <div class="email-subject-line">You Won't Notice Until It's Already Happened</div>
-      </div>
-
+      <div class="day-badge">Send Day 2 &nbsp;·&nbsp; Why Routines Break</div>
+      <div class="email-thread-header"><div class="email-subject-line">You Won't Notice Until It's Already Happened</div></div>
       <div class="sender-row">
-        <div class="sender-avatar">F</div>
+        <div class="sender-avatar">FF</div>
         <div class="sender-info">
-          <div class="sender-name">[Founder Name] <span style="font-weight:400;color:#5F6368;">&lt;founder@[clientname].com&gt;</span></div>
-          <div class="sender-email">to [Name]</div>
+          <div class="sender-name"><span class="merge">[Founder Name]</span> <span style="font-weight:400;color:#5F6368;">&lt;founder@freeformfitness.com&gt;</span></div>
+          <div class="sender-email">to <span class="merge">[Name]</span></div>
         </div>
-        <div class="sender-meta">9:42 AM</div>
-        <div class="sender-actions">
-          <div class="sender-action-icon">↩</div>
-          <div class="sender-action-icon">⋯</div>
-        </div>
+        <div class="sender-meta">10:30 AM</div>
+        <div class="sender-actions"><div class="sender-action-icon">↩</div><div class="sender-action-icon">⋯</div></div>
       </div>
     </div>
-
     <div class="email-body">
-      <p class="email-p">Hey [Name],</p>
-      <p class="email-p">This is [Founder Name], I just wanted to check in.</p>
-      <p class="email-p">You have a health plan now. And if you've been following it, that's great.</p>
-      <p class="email-p">I want you to be aware of what I've seen happen to a lot of busy professionals.</p>
-      <p class="email-p bold-line">It's never a sudden stop.</p>
-      <p class="email-p">You start strong by working out 3 times a week. You're consistent and feeling good about your progress. Then life finds a way to shift your priorities.</p>
-
-      <div class="life-events">
-        <div class="life-event">A promotion that has you adjusting to a new role.</div>
-        <div class="life-event">A big deal at work that consumes your evenings.</div>
-        <div class="life-event">A family obligation that shifts everything around.</div>
+      <p class="email-p">Hey <span class="merge">[Name]</span>,</p>
+      <p class="email-p">Most busy professionals stay consistent for a month, but they lose all progress by the end of the year.</p>
+      <p class="email-p">Sometimes, they end up in worse shape.</p>
+      <p class="email-p bold-line">It's never a sudden stop that breaks consistency.</p>
+      <p class="email-p">You start strong by working out 3 times a week.</p>
+      <p class="email-p">You're consistent and feeling good about your progress.</p>
+      <p class="email-p">Then life finds a way to shift your priorities…</p>
+      <div class="callout-list">
+        <div class="callout-item">A promotion that has you adjusting to a new role.</div>
+        <div class="callout-item">A big project at work that needs you to work overtime.</div>
+        <div class="callout-item">A family obligation that shifts everything around.</div>
       </div>
-
       <p class="email-p">And just like that, three times a week becomes one.</p>
       <p class="email-p">Once a week becomes once a month.</p>
-      <p class="email-p bold-line">And then one day you realize you haven't thought about your health in months.</p>
-      <p class="email-p">It's not a lack of willpower. It's a lack of something keeping you on track when life gets loud.</p>
-      <p class="email-p">That's exactly what a coach does.</p>
-      <p class="email-p"><em>When life gets busy, your trainer adjusts.</em> Your program bends around your schedule instead of breaking. <strong>You don't lose momentum because someone is making sure you don't.</strong></p>
-      <p class="email-p">If you want someone keeping you consistent when life gets loud, click below.</p>
-
-      <a href="#" class="email-cta">Click Here to Get Started</a>
-
+      <p class="email-p">And then one day you realize you haven't exercised in months.</p>
+      <p class="email-p bold-line">It's not a lack of willpower.</p>
+      <p class="email-p">Life has a way to make you forget prioritizing yourself.</p>
+      <p class="email-p">Our coaches help you stay consistent whenever you put yourself last.</p>
+      <p class="email-p"><em>When life gets busy, your trainer crafts quick workouts that fit your calendar.</em> Your program bends around your schedule instead of breaking. <strong>You don't lose momentum because someone is making sure you don't.</strong></p>
+      <p class="email-p">If you want someone to keep you consistent when life gets loud…</p>
+      <a href="#" class="email-cta">Meet Your Personal Trainer Here</a>
       <hr class="email-divider">
       <div class="email-sig">
-        <p class="sig-closing">To a life your body can keep up with,</p>
-        <p class="sig-name">[Founder Name]</p>
-        <p class="sig-title">Founder of [Client Name]</p>
+        <p class="sig-closing">To living healthy,</p>
+        <p class="sig-name"><span class="merge">[Founder Name]</span></p>
+        <p class="sig-title">Founder of Free Form Fitness</p>
       </div>
     </div>
-
-    <div class="reply-bar">
-      <button class="reply-btn">↩ Reply</button>
-      <button class="reply-btn">↪ Forward</button>
-    </div>
-
+    <div class="reply-bar"><button class="reply-btn">↩ Reply</button><button class="reply-btn">↪ Forward</button></div>
     <div class="subject-options">
       <div class="subject-options-label">Subject Line Variations</div>
       <div class="subject-list">
-        <div class="subject-option recommended">You Won't Notice Until It's Already Happened <span class="recommended-tag">RECOMMENDED</span></div>
-        <div class="subject-option">This Is How Most People Lose Their Progress</div>
-        <div class="subject-option">The One Thing That Kills Every Fitness Routine</div>
-        <div class="subject-option">How's the Health Plan Going?</div>
+        <div class="subject-option recommended">You won't notice until it's already happened <span class="recommended-tag">RECOMMENDED</span></div>
+        <div class="subject-option">This is how most people lose their progress</div>
+        <div class="subject-option">The one thing that kills every fitness routine</div>
       </div>
     </div>
   </div>
@@ -303,81 +209,53 @@ body{font-family:'Roboto',sans-serif;background:var(--gmail-bg);color:var(--gmai
     <div class="gmail-chrome">
       <div class="gmail-topbar">
         <svg class="gmail-logo-m" viewBox="0 0 32 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 4.5C0 3.12 2 2.5 2h27C30.88 2 32 3.12 32 4.5v15c0 1.38-1.12 2.5-2.5 2.5h-27C1.12 22 0 20.88 0 19.5V4.5z" fill="#fff" stroke="#E0E0E0" stroke-width="1"/>
+          <path d="M0 4.5C0 3.12 1.12 2 2.5 2h27C30.88 2 32 3.12 32 4.5v15c0 1.38-1.12 2.5-2.5 2.5h-27C1.12 22 0 20.88 0 19.5V4.5z" fill="#fff" stroke="#E0E0E0" stroke-width="1"/>
           <path d="M0 4.5L16 13.5 32 4.5" fill="none" stroke="#EA4335" stroke-width="2"/>
           <path d="M0 4.5V19.5L10 12" fill="none" stroke="#4285F4" stroke-width="1.5"/>
           <path d="M32 4.5V19.5L22 12" fill="none" stroke="#34A853" stroke-width="1.5"/>
-          <path d="M10 12L0 19.5" fill="none" stroke="#FBBC05" stroke-width="1.5"/>
-          <path d="M22 12L32 19.5" fill="none" stroke="#EA4335" stroke-width="1.5"/>
         </svg>
-        <span style="font-size:13px;color:#5F6368;font-weight:400;">Gmail</span>
-        <div class="gmail-topbar-actions">
-          <div class="gmail-icon">⋯</div>
-        </div>
+        <span style="font-size:13px;color:#5F6368;">Gmail</span>
+        <div class="gmail-topbar-actions"><div class="gmail-icon">⋯</div></div>
       </div>
-
-      <div class="day-badge">Day 3</div>
-      <div class="email-thread-header">
-        <div class="email-subject-line">One Missed Week Becomes Two. Then Three.</div>
-      </div>
-
+      <div class="day-badge">Send Day 3 &nbsp;·&nbsp; The Cost of Starting Over</div>
+      <div class="email-thread-header"><div class="email-subject-line">Starting Over Costs More Than You Think</div></div>
       <div class="sender-row">
-        <div class="sender-avatar">F</div>
+        <div class="sender-avatar">FF</div>
         <div class="sender-info">
-          <div class="sender-name">[Founder Name] <span style="font-weight:400;color:#5F6368;">&lt;founder@[clientname].com&gt;</span></div>
-          <div class="sender-email">to [Name]</div>
+          <div class="sender-name"><span class="merge">[Founder Name]</span> <span style="font-weight:400;color:#5F6368;">&lt;founder@freeformfitness.com&gt;</span></div>
+          <div class="sender-email">to <span class="merge">[Name]</span></div>
         </div>
-        <div class="sender-meta">9:42 AM</div>
-        <div class="sender-actions">
-          <div class="sender-action-icon">↩</div>
-          <div class="sender-action-icon">⋯</div>
-        </div>
+        <div class="sender-meta">8:45 AM</div>
+        <div class="sender-actions"><div class="sender-action-icon">↩</div><div class="sender-action-icon">⋯</div></div>
       </div>
     </div>
-
     <div class="email-body">
-      <p class="email-p">Hey [Name],</p>
-      <p class="email-p">Getting started is hard. Starting over is harder.</p>
-      <p class="email-p">Most busy professionals don't lose their routine because they stopped caring.</p>
-      <p class="email-p">They lose it because life got loud and health was the easiest thing to put on hold.</p>
-
-      <div class="life-events">
-        <div class="life-event">It starts small from missing a week.</div>
-        <div class="life-event">Then it becomes 2.</div>
-        <div class="life-event">Then without realizing it, months go by without working out.</div>
-      </div>
-
+      <p class="email-p">Hey <span class="merge">[Name]</span>,</p>
+      <p class="email-p">When life gets busy, health is the easiest thing to put on hold.</p>
+      <p class="email-p">Losing progress starts with missing a week in the gym.</p>
+      <p class="email-p">Then it becomes 2 weeks.</p>
+      <p class="email-p">Without realizing it, months go by…</p>
       <p class="email-p bold-line">And now you're back at the starting line.</p>
-      <p class="email-p">Your body remembers what you built. But getting back there takes the same energy, the same time, and the same effort as when you first started.</p>
+      <p class="email-p">But this time you're fighting the "what ifs" and "I should've been better" running through your mind.</p>
       <p class="email-p bold-line">That's the real cost of losing momentum.</p>
-      <p class="email-p">Staying consistent is hard when your mind is already full of work, family, and everything else life asks of you.</p>
-      <p class="email-p">Health matters to you, but you can't give it your full attention all the time.</p>
-      <p class="email-p">That's exactly why our coaches are here.</p>
-      <p class="email-p">When you work with a personal trainer, staying on track isn't something you have to manage.</p>
-      <p class="email-p bold-line">Your trainer handles that for you. All you have to do is show up.</p>
-
-      <a href="#" class="email-cta">Click Here to Get Started</a>
-
+      <p class="email-p">It's hard to stay on track when you're focused on career, family, and other things life throws at you.</p>
+      <p class="email-p">But it's easier when you have someone to keep you accountable.</p>
+      <p class="email-p">All you have to do is show up and we'll do the heavy lifting for you.</p>
+      <a href="#" class="email-cta">Learn How We'll Do It</a>
       <hr class="email-divider">
       <div class="email-sig">
         <p class="sig-closing">To a life your body can keep up with,</p>
-        <p class="sig-name">[Founder Name]</p>
-        <p class="sig-title">Founder of [Client Name]</p>
+        <p class="sig-name"><span class="merge">[Founder Name]</span></p>
+        <p class="sig-title">Founder of Free Form Fitness</p>
       </div>
     </div>
-
-    <div class="reply-bar">
-      <button class="reply-btn">↩ Reply</button>
-      <button class="reply-btn">↪ Forward</button>
-    </div>
-
+    <div class="reply-bar"><button class="reply-btn">↩ Reply</button><button class="reply-btn">↪ Forward</button></div>
     <div class="subject-options">
       <div class="subject-options-label">Subject Line Variations</div>
       <div class="subject-list">
-        <div class="subject-option recommended">One Missed Week Becomes Two. Then Three. <span class="recommended-tag">RECOMMENDED</span></div>
-        <div class="subject-option">Starting Over Takes More Than You Think</div>
-        <div class="subject-option">The Real Cost of Losing Momentum</div>
-        <div class="subject-option">Your Routine Is Easier to Keep Than Rebuild</div>
+        <div class="subject-option recommended">Starting over costs more than you think <span class="recommended-tag">RECOMMENDED</span></div>
+        <div class="subject-option">Don't lose momentum when you have…</div>
+        <div class="subject-option">Why does everybody put health last?</div>
       </div>
     </div>
   </div>
